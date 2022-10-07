@@ -1,16 +1,28 @@
-# This is a sample Python script.
+#5.1. Создайте любой класс с произвольным количеством подклассов, экземпляров, атрибутов и методов
+#- как минимум один атрибут должен быть с уровнем доступа private. Соответственно, для получения значений этого атрибута
+# нужно использовать методы get  и set
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Ho, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+#5.2 Создайте репозиторий на Github и отправьте файл с домашним заданием в этот удаленный репозиторий
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class Person:
+    some_num = 123
+    def __init__(self, name, lastname, placeofbirth, yearofbirth):
+        self.name = name                                        # <-- атрибуты класса
+        self.lastname = lastname
+        self.placeofbirth = placeofbirth
+        self.yearofbirth = yearofbirth
+    def printInfo(self, n):
+        for i in range(n):
+            print(f'Name = {self.name},Last Name = {self.lastname},POB = {self.placeofbirth}')
+    def get_age(self, current_year):
+        return current_year - self.yearofbirth
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+p1 = Person('I.S.', 'Bach', 'Germany', 1685)
+p2 = Person('W.A.', 'Mozart', 'Austria', 1756)
+p3 = Person('Sergey','Rachmaninoff', 'Russia', 1873)
+
+
+p3.printInfo(1)
+
+#Person.printInfo(p1)
